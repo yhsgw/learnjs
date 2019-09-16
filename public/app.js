@@ -1,9 +1,10 @@
+
 'use strict';
 var learnjs = {};
 
 learnjs.problemView = function(problemNumber) {
   var view = $('.template .problem-view').clone();
-  var title = 'Problem #' + problemNumber + ' Coming soon!';
+  var title = 'Problem #' + problemNumber;
   view.find('.title').text(title);
   return view;
 };

@@ -19,7 +19,7 @@ describe('LearnJS', function() {
     it('has a title that includes thw problem number', function(){
       var view = learnjs.problemView('1');
       // view.text()の結果に改行がついてくる為、比較時にtrimしてます。（テスト結果として影響なしと判断）
-      expect(view.text().trim()).toEqual('Problem #1 Coming soon!');
+      expect(view.text().trim()).toEqual('Problem #1');
     });
 
     it('invokes the router when loaded', function(){
