@@ -16,10 +16,19 @@ describe('LearnJS', function() {
   });
 
   describe('problem view', function(){
-    it('has a title that includes thw problem number', function(){
+    it('has a title that includes the problem number', function(){
       var view = learnjs.problemView('1');
-      // view.text()の結果に改行がついてくる為、比較時にtrimしてます。（テスト結果として影響なしと判断）
-      expect(view.text().trim()).toEqual('Problem #1');
+      expect(view.find('.title').text()).toEqual('Problem #1');
+    });
+
+    it('shows the description', function() {
+      var view = learnjs.problemView('1');
+      expect(view.find('[data-name="description"]').text()).toEqual('What is truth?');  
+    });
+
+    it('shows the problem code', function(){
+      var view = learnjs.problemView('1');
+      expect(view.find('[data-name="code"]').text()).toEqual('function problem() { return __; }');
     });
 
     it('invokes the router when loaded', function(){
