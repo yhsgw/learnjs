@@ -26,7 +26,7 @@ describe('LearnJS', function() {
     });
 
     it('shows the description', function() {
-      expect(view.find('[data-name="description"]').text()).toEqual('What is truth?');  
+      expect(view.find('[data-name="description"]').text()).toEqual('What is truth?');
     });
 
     it('shows the problem code', function(){
@@ -48,6 +48,11 @@ describe('LearnJS', function() {
   });
 
   describe('answer section', function(){
+    var view;
+    beforeEach(function() {
+      view = learnjs.problemView('1');
+    });
+
     it('can check a correct answer by hitting a button', function(){
       view.find('.answer').val('true');
       view.find('.check-btn').click();
