@@ -1,0 +1,42 @@
+body { margin-top: 90px; }
+
+.templates { display: none;}
+
+.inline-list {
+  margin-bottom: 0px;
+}
+
+.inline-list li {
+  display: inline;
+  margin: 0 20px 0 0;
+}
+
+/*
+ ナビゲーションバーを上部に固定
+ 画面をスクロールしても見えるようにします
+ */
+.fixed-top {
+  position: fixed;
+  top: 0px;
+  z-index: 1024
+}
+
+/* ナビゲーションバー自体を選択できないようにします */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+
+/* hoverした時だけ、リンクに下線を表示させます */
+.hover-links a { text-decoration: none;}
+.hover-links a:hover { text-decoration: underline;}
+
+.nav-container {
+  padding-left: 40px;
+  background: #666;
+}
+.nav-container a {color: white;}
+
+.text-lg { font-size: 4.2rem; }
