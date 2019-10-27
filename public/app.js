@@ -52,7 +52,8 @@ learnjs.problemView = function(data) {
 
 learnjs.showView = function(hash){
   var routes = {
-    '#problem': learnjs.problemView
+    '#problem': learnjs.problemView,
+    '': learnjs.landingView
   };
   var hashParts = hash.split('-');
   var viewFn = routes[hashParts[0]];
@@ -86,5 +87,9 @@ learnjs.buildCorrectFlash = function (problemNum) {
     link.text("You're Finished!");
   }
   return correctFlash;
+}
+
+learnjs.landingView = function() {
+  return learnjs.template('landing-view');
 }
 
