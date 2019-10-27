@@ -56,7 +56,7 @@ describe('LearnJS', function() {
     it('can check a correct answer by hitting a button', function(){
       view.find('.answer').val('true');
       view.find('.check-btn').click();
-      expect(view.find('.result').text()).toEqual('Correct!');
+      expect(view.find('.result').text().replace(/\r?\n/g, '').trim()).toEqual('Correct! Next Problem');
     });
 
     it('rejects an incorrect answer', function(){
@@ -64,5 +64,12 @@ describe('LearnJS', function() {
       view.find('.check-btn').click();
       expect(view.find('.result').text()).toEqual('Incorrect!');
     });
+
+    it('completed problems', function(){
+      view = learnjs.problemView('2');
+      view.find('.answer').val('7');
+      view.find('.check-btn').click();
+      expect(view.find('.result').text().replace(/\r?\n/g, '').trim()).toEqual("Correct! You're Finished!");
+    })
   });
  });
